@@ -15,9 +15,11 @@ conf.d:
 
 init.d/%: init.d.in/%.in init.d
 	$(MACRO_PROG) $< > $@
+	chmod +x $@
 
 conf.d/%: conf.d.in/%.in conf.d
 	$(MACRO_PROG) $< > $@
+	chmod +x $@
 
 .PHONY: clean
 clean:
