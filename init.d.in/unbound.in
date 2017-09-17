@@ -1,0 +1,10 @@
+#!@OPENRC_RUN@
+
+pidfile=/run/unbound.pid
+command="@BINDIR@/unbound"
+
+depend() {
+	need net
+	use logger
+	provide dns
+}
