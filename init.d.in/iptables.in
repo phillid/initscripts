@@ -1,0 +1,33 @@
+#!@OPENRC_RUN@
+
+extra_commands="check"
+extra_started_commands="reload"
+
+iptables_name="${SVCNAME}"
+iptables="@BINDIR@/${iptables_name}"
+
+depend() {
+	need localmount
+	before net
+}
+
+checkrules() {
+	${iptables}-restore --test "${IPTABLES_SAVE}"
+}
+
+start() {
+	checkrules || return 1
+	ebegin "Loading ${iptables_name} with rules from ${IPTABLES_SAVE}"
+	${iptables}-restore "${IPTABLES_SAVE}"
+	eend $?
+}
+
+reload() {
+	start
+}
+
+stop() {
+	ebegin "Flushing rules from ${iptables_name}"
+	/usr/lib/systemd/scripts/iptables-flush >/dev/null
+	eend $?
+}
