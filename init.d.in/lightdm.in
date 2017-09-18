@@ -1,0 +1,8 @@
+#!@OPENRC_RUN@
+
+command=@BINDIR@/lightdm
+command_args="-c ${CONFIG_FILE}"
+
+depend() {
+	after local
+}
