@@ -11,6 +11,8 @@ sedargs=""
 for var in \
 	BINDIR \
 	OPENRC_RUN \
+	SYSCONFDIR \
+	OPENRC_DIR \
 	; do
 	sedargs="${sedargs} -e s:\@${var}\@:${!var}:g "
 done

@@ -1,7 +1,7 @@
-export OPENRC_RUN = /usr/bin/openrc-run
-export BINDIR = /usr/bin
-
-SYSCONFDIR ?= etc
+export OPENRC_RUN ?= /usr/bin/openrc-run
+export BINDIR ?= /usr/bin
+export SYSCONFDIR ?= /etc
+export OPENRC_DIR ?= /etc
 
 MACRO_PROG = ./replace.sh
 INIT_FILES = $(shell find init.d.in -type f | sed -e 's/\.in$$//g' -e 's/init\.d\.in/init.d/g')

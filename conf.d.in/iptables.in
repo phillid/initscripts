@@ -1,1 +1,1 @@
-iptables_save="/etc/iptables/iptables.rules"
+iptables_save="@SYSCONFDIR@/iptables/iptables.rules"
