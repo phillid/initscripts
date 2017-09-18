@@ -6,8 +6,8 @@ export OPENRC_DIR ?= /etc
 MACRO_PROG = ./replace.sh
 INIT_FILES = $(shell find init.d.in -type f | sed -e 's/\.in$$//g' -e 's/init\.d\.in/init.d/g')
 CONF_FILES = $(shell find conf.d.in -type f | sed -e 's/\.in$$//g' -e 's/conf\.d\.in/conf.d/g')
-DEST_INIT_D = $(DESTDIR)/$(SYSCONFDIR)/init.d
-DEST_CONF_D = $(DESTDIR)/$(SYSCONFDIR)/conf.d
+DEST_INIT_D = $(DESTDIR)/$(OPENRC_DIR)/init.d
+DEST_CONF_D = $(DESTDIR)/$(OPENRC_DIR)/conf.d
 
 all: $(INIT_FILES) $(CONF_FILES)
 
