@@ -1,0 +1,1 @@
+CONFIG_FILE="@SYSCONFDIR@/dnscrypt-proxy.conf"
