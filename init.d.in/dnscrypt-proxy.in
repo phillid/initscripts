@@ -1,7 +1,7 @@
 #!@OPENRC_RUN@
 
 pidfile=/run/dnscrypt-proxy.pid
-command="@BINDIR@dnscrypt-proxy"
+command="@BINDIR@/dnscrypt-proxy"
 command_args="${CONFIG_FILE}"
 command_background=yes
 
